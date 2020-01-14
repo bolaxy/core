@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"crypto/ecdsa"
 	"encoding/json"
-	"github.com/boxproject/bolaxy/common"
-	"github.com/boxproject/bolaxy/common/hexutil"
-	"github.com/boxproject/bolaxy/conf"
-	"github.com/boxproject/bolaxy/crypto"
+
+	"github.com/bolaxy/common"
+	"github.com/bolaxy/common/hexutil"
+	"github.com/bolaxy/conf"
+	"github.com/bolaxy/crypto"
 )
 
 /*******************************************************************************

@@ -2,8 +2,9 @@ package types
 
 import (
 	"bytes"
-	"github.com/boxproject/bolaxy/common"
-	"github.com/boxproject/bolaxy/conf"
+
+	"github.com/bolaxy/common"
+	"github.com/bolaxy/conf"
 	"github.com/ugorji/go/codec"
 )
 

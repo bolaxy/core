@@ -7,4 +7,4 @@ type CommitResponse struct {
 }
 
 // CommitCallback ...
-//type CommitCallback func(block Block) (CommitResponse, error)
+// type CommitCallback func(block Block) (CommitResponse, error)

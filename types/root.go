@@ -3,8 +3,9 @@ package types
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/boxproject/bolaxy/common/hexutil"
-	"github.com/boxproject/bolaxy/crypto"
+
+	"github.com/bolaxy/common/hexutil"
+	"github.com/bolaxy/crypto"
 )
 
 //Root forms a base on top of which a participant's Events can be inserted. It
