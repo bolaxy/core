@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/bolaxy/common/hexutil"
-	"github.com/bolaxy/conf"
+	conf "github.com/bolaxy/config"
 	"github.com/bolaxy/crypto"
 )
 
@@ -24,7 +24,7 @@ type BlockBody struct {
 	InternalTransactionReceipts []InternalTransactionReceipt
 }
 
-//Marshal - json encoding of body only
+// Marshal - json encoding of body only
 func (bb *BlockBody) Marshal() ([]byte, error) {
 	bf := bytes.NewBuffer([]byte{})
 	enc := json.NewEncoder(bf)
@@ -37,7 +37,7 @@ func (bb *BlockBody) Marshal() ([]byte, error) {
 // Unmarshal ...
 func (bb *BlockBody) Unmarshal(data []byte) error {
 	b := bytes.NewBuffer(data)
-	dec := json.NewDecoder(b) //will read from b
+	dec := json.NewDecoder(b) // will read from b
 	if err := dec.Decode(bb); err != nil {
 		return err
 	}
@@ -56,7 +56,7 @@ func (bb *BlockBody) Hash() ([]byte, error) {
 // BlockSignature ...
 type BlockSignature struct {
 	Validator []byte
-	Index     int //Block Index
+	Index     int // Block Index
 	Signature string
 }
 
@@ -83,7 +83,7 @@ func (bs *BlockSignature) Marshal() ([]byte, error) {
 // Unmarshal ...
 func (bs *BlockSignature) Unmarshal(data []byte) error {
 	b := bytes.NewBuffer(data)
-	dec := json.NewDecoder(b) //will read from b
+	dec := json.NewDecoder(b) // will read from b
 	if err := dec.Decode(bs); err != nil {
 		return err
 	}

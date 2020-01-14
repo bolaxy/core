@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"sort"
 
-	"github.com/bolaxy/conf"
+	"github.com/bolaxy/config"
 
 	"github.com/bolaxy/crypto"
 	"github.com/ugorji/go/codec"
@@ -12,11 +12,11 @@ import (
 
 // Frame ...
 type Frame struct {
-	Round    int //RoundReceived
+	Round    int // RoundReceived
 	Peers    []*conf.Peer
 	Roots    map[string]*Root
-	Events   []*FrameEvent        //Events with RoundReceived = Round
-	PeerSets map[int][]*conf.Peer //[round] => Peers
+	Events   []*FrameEvent        // Events with RoundReceived = Round
+	PeerSets map[int][]*conf.Peer // [round] => Peers
 }
 
 // SortedFrameEvents ...
@@ -30,7 +30,7 @@ func (f *Frame) SortedFrameEvents() []*FrameEvent {
 	return sorted
 }
 
-//Marshal - json encoding of Frame
+// Marshal - json encoding of Frame
 func (f *Frame) Marshal() ([]byte, error) {
 	b := new(bytes.Buffer)
 	jh := new(codec.JsonHandle)

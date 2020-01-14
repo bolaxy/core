@@ -8,21 +8,21 @@ import (
 	"github.com/bolaxy/crypto"
 )
 
-//Root forms a base on top of which a participant's Events can be inserted. It
-//contains FrameEvents sorted by Lamport timestamp.
+// Root forms a base on top of which a participant's Events can be inserted. It
+// contains FrameEvents sorted by Lamport timestamp.
 type Root struct {
 	Events []*FrameEvent
 }
 
-//NewRoot instantianted an new empty root
+// NewRoot instantianted an new empty root
 func NewRoot() *Root {
 	return &Root{
 		Events: []*FrameEvent{},
 	}
 }
 
-//Insert appends a FrameEvent to the root's Event slice. It is assumend that
-//items are inserted in topological order.
+// Insert appends a FrameEvent to the root's Event slice. It is assumend that
+// items are inserted in topological order.
 func (r *Root) Insert(frameEvent *FrameEvent) {
 	r.Events = append(r.Events, frameEvent)
 }
@@ -40,11 +40,11 @@ func (r *Root) Marshal() ([]byte, error) {
 	return b.Bytes(), nil
 }
 
-//Unmarshal decodes data into a Root object
+// Unmarshal decodes data into a Root object
 func (r *Root) Unmarshal(data []byte) error {
 	b := bytes.NewBuffer(data)
 
-	dec := json.NewDecoder(b) //will read from b
+	dec := json.NewDecoder(b) // will read from b
 
 	return dec.Decode(r)
 }

@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/bolaxy/common"
-	"github.com/bolaxy/conf"
+	"github.com/bolaxy/config"
 	"github.com/bolaxy/errors"
 )
 

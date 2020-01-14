@@ -7,7 +7,7 @@ import (
 
 	"github.com/bolaxy/common"
 	"github.com/bolaxy/common/hexutil"
-	"github.com/bolaxy/conf"
+	"github.com/bolaxy/config"
 	"github.com/bolaxy/crypto"
 )
 

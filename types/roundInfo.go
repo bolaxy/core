@@ -4,7 +4,7 @@ import (
 	"bytes"
 
 	"github.com/bolaxy/common"
-	"github.com/bolaxy/conf"
+	"github.com/bolaxy/config"
 	"github.com/ugorji/go/codec"
 )
 
