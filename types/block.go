@@ -242,6 +242,7 @@ func (b *Block) GetSignature(validator string) (res BlockSignature, err error) {
 // AppendTransactions ...
 func (b *Block) AppendTransactions(txs [][]byte) {
 	b.Body.Transactions = append(b.Body.Transactions, txs...)
+	b.clear()
 }
 
 // Marshal ...
@@ -271,6 +272,7 @@ func (b *Block) Hash() ([]byte, error) {
 		if err != nil {
 			return nil, err
 		}
+
 		b.hash = crypto.Keccak256(hashBytes)
 	}
 	return b.hash, nil
@@ -309,6 +311,7 @@ func (b *Block) Sign(privKey *ecdsa.PrivateKey) (bs BlockSignature, err error) {
 // SetSignature ...
 func (b *Block) SetSignature(bs BlockSignature) error {
 	b.Signatures[bs.ValidatorCompressHex()] = bs.Signature
+	b.clear()
 	return nil
 }
 
@@ -325,6 +328,10 @@ func (b *Block) Verify(sig BlockSignature) (bool, error) {
 	}
 
 	return crypto.VerifySignature(sig.Validator, signBytes, s[:len(s)-1]), nil
+}
+func (b *Block) clear() {
+	b.hash = nil
+	b.hex = ""
 }
 
 type SyncType int
