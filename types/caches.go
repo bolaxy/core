@@ -2,9 +2,9 @@ package types
 
 import (
 	"fmt"
-	"github.com/boxproject/bolaxy/common"
-	"github.com/boxproject/bolaxy/conf"
-	"github.com/boxproject/bolaxy/errors"
+	"github.com/bolaxy/common"
+	conf "github.com/bolaxy/config"
+	"github.com/bolaxy/errors"
 	"math"
 	"sort"
 	"strconv"

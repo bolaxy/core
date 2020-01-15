@@ -2,10 +2,10 @@ package types
 
 import (
 	"bytes"
-	"github.com/boxproject/bolaxy/conf"
 	"sort"
 
-	"github.com/boxproject/bolaxy/crypto"
+	conf "github.com/bolaxy/config"
+	"github.com/bolaxy/crypto"
 	"github.com/ugorji/go/codec"
 )
 

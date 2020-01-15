@@ -8,8 +8,8 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/boxproject/bolaxy/common/hexutil"
-	"github.com/boxproject/bolaxy/crypto"
+	"github.com/bolaxy/common/hexutil"
+	"github.com/bolaxy/crypto"
 )
 
 // EventBody ...

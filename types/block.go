@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/boxproject/bolaxy/common/hexutil"
-	"github.com/boxproject/bolaxy/conf"
-	"github.com/boxproject/bolaxy/crypto"
+	"github.com/bolaxy/common/hexutil"
+	conf "github.com/bolaxy/config"
+	"github.com/bolaxy/crypto"
 )
 
 // BlockBody ...
